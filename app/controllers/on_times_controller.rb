@@ -1,10 +1,11 @@
 class OnTimesController < ApplicationController
   before_action :set_on_time, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!
 
   # GET /on_times
   # GET /on_times.json
   def index
-    @on_times = OnTime.all
+    @on_times = current_user.on_times.all
   end
 
   # GET /on_times/1
@@ -14,7 +15,7 @@ class OnTimesController < ApplicationController
 
   # GET /on_times/new
   def new
-    @on_time = OnTime.new
+    @on_time = current_user.on_times.new
   end
 
   # GET /on_times/1/edit
@@ -24,7 +25,7 @@ class OnTimesController < ApplicationController
   # POST /on_times
   # POST /on_times.json
   def create
-    @on_time = OnTime.new(on_time_params)
+    @on_time = current_user.on_times.new(on_time_params)
 
     respond_to do |format|
       if @on_time.save
@@ -64,7 +65,7 @@ class OnTimesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_on_time
-      @on_time = OnTime.find(params[:id])
+      @on_time = current_user.on_times.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
