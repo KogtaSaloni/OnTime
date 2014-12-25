@@ -1,0 +1,25 @@
+<%= form_for(@on_time) do |f| %>
+  <% if @on_time.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@on_time.errors.count, "error") %> prohibited this on_time from being saved:</h2>
+
+      <ul>
+      <% @on_time.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Task %><br>
+    <%= f.text_field :Task %>
+  </div>
+  <div class="field">
+    <%= f.label :Deadline %><br>
+    <%= f.date_select :Deadline %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

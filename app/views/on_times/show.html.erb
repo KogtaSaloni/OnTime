@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @on_time.Task %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @on_time.Deadline %>
+</p>
+
+<%= link_to 'Edit', edit_on_time_path(@on_time) %> |
+<%= link_to 'Back', on_times_path %>
