@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'site/index'
+
   devise_for :users
   resources :on_times
 
@@ -56,4 +58,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  root 'site#index'
 end

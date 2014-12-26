@@ -1,0 +1,17 @@
+<h2>Latest OnTimes</h2>
+<table style="width: 100%">
+  <thead>
+    <tr>
+      <th>Deadline</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @bookmarks.each do |ontime| %>
+    <tr>
+      <td><%= ontime.Task %></td>
+      <!-- link_to ontime.Task, ontime.Deadline -->
+    </tr>
+  <% end %>
+  </tbody>
+</table>
